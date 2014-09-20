@@ -1,0 +1,22 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:textAlignment="center"
+    tools:context="com.example.edukate.MainActivity$PlaceholderFragment" >
+
+    <TextView
+        android:id="@+id/page1Text"
+        android:layout_width="wrap_content"
+        android:paddingLeft="50dp"
+        android:paddingRight="16dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:text="@string/page1_label"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:typeface="sans" />
+
+</RelativeLayout>

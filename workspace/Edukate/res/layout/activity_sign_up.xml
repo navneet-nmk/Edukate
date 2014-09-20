@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.edukate.SignupActivity" >
+
+    <EditText
+        android:id="@+id/usernameSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint="@string/usernameLabel"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/passwordSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/usernameSignUp"
+        android:layout_below="@+id/usernameSignUp"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:hint="@string/password_label"
+        android:inputType="textPassword" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/instituteFiled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/passwordSignUp"
+        android:layout_below="@+id/passwordSignUp"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:hint="@string/institute_label" />
+
+    <EditText
+        android:id="@+id/emailSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/instituteFiled"
+        android:layout_below="@+id/instituteFiled"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/email_label"
+        android:inputType="textEmailAddress" />
+
+    <Button
+        android:id="@+id/signUpButtonTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emailSignUp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:text="@string/signUpText" />
+
+</RelativeLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/listviewlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/card"
+        android:orientation="vertical"
+        android:padding="4dp" >
+
+        <TextView
+            android:id="@+id/listText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/testingString"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/downvotePostsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/upvoteNewsButton"
+            android:layout_alignBottom="@+id/upvoteNewsButton"
+            android:layout_alignParentRight="true"
+            android:text="@string/downvoteLabel" />
+
+        <Button
+            android:id="@+id/ansWerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/downvotePostsButton"
+            android:layout_alignBottom="@+id/downvotePostsButton"
+            android:layout_centerHorizontal="true"
+            android:layout_toLeftOf="@+id/downvotePostsButton"
+            android:layout_toRightOf="@+id/upvoteNewsButton"
+            android:text="@string/answerLabel" />
+
+        <TextView
+            android:id="@+id/poststext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/upvotePostText"
+            android:layout_below="@+id/listText"
+            android:padding="8dp"
+            android:text="@string/testingAnswerString"
+            android:maxLines="3" />
+
+        <Button
+            android:id="@+id/upvoteNewsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/poststext"
+            android:layout_marginTop="25dp"
+            android:text="@string/upvoteLabel" />
+
+        <TextView
+            android:id="@+id/upvotePostText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ansWerButton"
+            android:layout_alignLeft="@+id/upvoteNewsButton"
+            android:padding="8dp"
+            android:text="@string/testingUpvotesString"
+            android:textSize="13sp"
+            android:textStyle="italic" />
+
+    </RelativeLayout>
+
+</LinearLayout>

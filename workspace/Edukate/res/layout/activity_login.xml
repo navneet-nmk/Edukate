@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.edukate.LoginActivity" >
+
+    <EditText
+        android:id="@+id/usernameField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint="@string/usernameLabel"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/passwordFiled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/usernameField"
+        android:layout_below="@+id/usernameField"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:hint="@string/password_label"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/signInButtonFiled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/passwordFiled"
+        android:layout_below="@+id/passwordFiled"
+        android:layout_marginTop="14dp"
+        android:text="@string/signIn" />
+
+</RelativeLayout>
