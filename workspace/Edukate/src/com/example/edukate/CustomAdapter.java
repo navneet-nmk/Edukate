@@ -126,8 +126,8 @@ public class CustomAdapter extends ParseQueryAdapter<ParseObject> {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(getContext(), AnswerActivity.class);
-				// intent.putExtra("question",
-				// object.getString("questionAsked"));
+				//intent.putExtra("question",
+				//object.getString("questionAsked"));
 				// intent.putExtra("questionID", object.getObjectId());
 				getContext().startActivity(intent);
 

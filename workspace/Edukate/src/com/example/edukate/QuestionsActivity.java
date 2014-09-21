@@ -51,6 +51,7 @@ public class QuestionsActivity extends FragmentActivity implements
 			// Log the username in logcat for debugging purposes
 
 		}
+
 		// Set up the action bar.
 		final ActionBar actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -62,7 +63,7 @@ public class QuestionsActivity extends FragmentActivity implements
 
 		// Set up the ViewPager with the sections adapter.
 		mViewPager = (ViewPager) findViewById(R.id.pager);
-		mViewPager.setOffscreenPageLimit(3);
+		mViewPager.setOffscreenPageLimit(4);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
 
 		// When swiping between different sections, select the corresponding
@@ -164,6 +165,10 @@ public class QuestionsActivity extends FragmentActivity implements
 
 				}
 			});
+		case R.id.instituteProfile:
+			Intent instituteIntent = new Intent(QuestionsActivity.this,
+					InstituteProfileActivity.class);
+			startActivity(instituteIntent);
 		}
 		return super.onOptionsItemSelected(item);
 	}

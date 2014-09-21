@@ -4,9 +4,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.parse.GetCallback;
@@ -23,12 +25,14 @@ public class ProfileFragment extends Fragment {
 	protected TextView userName;
 	protected TextView location;
 	protected ImageView profileImage;
+	protected ListView userQuestionsLists;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_profile, container,
 				false);
+
 		institute = (TextView) rootView.findViewById(R.id.userInstitute);
 		email = (TextView) rootView.findViewById(R.id.userEmail);
 		userName = (TextView) rootView.findViewById(R.id.profileName);
@@ -54,7 +58,23 @@ public class ProfileFragment extends Fragment {
 
 			}
 		});
+		// Set custom adapter
+		userQuestionsLists = (ListView) rootView
+				.findViewById(R.id.questionsListUser);
+		CustomAdapterQuestions adapter = new CustomAdapterQuestions(
+				getActivity());
+		userQuestionsLists.setAdapter(adapter);
+		// For scrolling list view in a scroll view
+		userQuestionsLists.setOnTouchListener(new View.OnTouchListener() {
 
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if (event.getAction() == MotionEvent.ACTION_MOVE) {
+					userQuestionsLists.scrollBy(0, 1);
+				}
+				return false;
+			}
+		});
 		return rootView;
 
 	}
