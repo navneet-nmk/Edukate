@@ -30,13 +30,45 @@ public class CustomAdapterAnswers extends ParseQueryAdapter<ParseObject> {
 	}
 
 	@Override
-	public View getItemView(ParseObject object, View v, ViewGroup parent) {
+	public View getItemView(final ParseObject object, View v, ViewGroup parent) {
 		if (v == null) {
 			v = View.inflate(getContext(), R.layout.answerslistviewlayout, null);
 		}
 
 		super.getItemView(object, v, parent);
+
 		TextView answerstext = (TextView) v.findViewById(R.id.poststext);
+		final Button upvoteAnswerButton = (Button) v
+				.findViewById(R.id.upvoteButtonAnswers);
+		upvoteAnswerButton.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				int count = object.getInt("Upvotes");
+				count = count + 1;
+				object.put("Upvotes", count);
+				object.saveInBackground();
+				notifyDataSetChanged();
+				upvoteAnswerButton.setEnabled(false);
+
+			}
+		});
+		final Button downvoteAnswerButton = (Button) v
+				.findViewById(R.id.downvoteButtonAnswers);
+		downvoteAnswerButton.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				int count = object.getInt("Downvotes");
+				count = count + 1;
+				object.put("Downvotes", count);
+				object.saveInBackground();
+				notifyDataSetChanged();
+				downvoteAnswerButton.setEnabled(false);
+			}
+		});
+		TextView upvotesAnswertext = (TextView) v
+				.findViewById(R.id.upvotesTextAnswers);
 		// relation = object.getRelation("answersRequired");
 		// relation.getQuery().findInBackground(new FindCallback<ParseObject>()
 		// {
@@ -53,15 +85,11 @@ public class CustomAdapterAnswers extends ParseQueryAdapter<ParseObject> {
 		//
 		// }
 		// });
+
 		if (object != null) {
 			answerstext.setText(object.getString("answerPosted"));
+			upvotesAnswertext.setText(object.getInt("Upvotes") + " upvotes");
 		}
-
-		Button upvoteButton = (Button) v.findViewById(R.id.upvoteButtonAnswers);
-		Button downvoteButton = (Button) v
-				.findViewById(R.id.downvoteButtonAnswers);
-		TextView upvotestext = (TextView) v
-				.findViewById(R.id.upvotesTextAnswers);
 
 		return v;
 	}

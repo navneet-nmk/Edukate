@@ -13,5 +13,6 @@
         android:title="Question" android:showAsAction="always">
     </item>
     <item android:id="@+id/add_post" android:title="Add Post"></item>
+    <item android:id="@+id/instituteProfile" android:title="Institute Profile"></item>
 
 </menu>

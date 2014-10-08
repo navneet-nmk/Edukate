@@ -24,7 +24,7 @@ public class CustomAdapterNews extends ParseQueryAdapter<ParseObject> {
 	}
 
 	@Override
-	public View getItemView(ParseObject object, View v, ViewGroup parent) {
+	public View getItemView(final ParseObject object, View v, ViewGroup parent) {
 		if (v == null) {
 			v = View.inflate(getContext(), R.layout.newsfeedlistitem, null);
 		}
@@ -32,8 +32,40 @@ public class CustomAdapterNews extends ParseQueryAdapter<ParseObject> {
 		TextView postAdded = (TextView) v.findViewById(R.id.poststext);
 		postAdded.setText(object.getString("postAdded"));
 		TextView upvotestext = (TextView) v.findViewById(R.id.upvotePostText);
-		Button upvoteButton = (Button) v.findViewById(R.id.upvoteNewsButton);
-		Button downvButton = (Button) v.findViewById(R.id.downvotePostsButton);
+		final Button upvoteButton = (Button) v
+				.findViewById(R.id.upvoteNewsButton);
+		upvoteButton.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				int count = object.getInt("Upvotes");
+				count = count + 1;
+				object.put("Upvotes", count);
+				object.saveInBackground();
+				notifyDataSetChanged();
+				upvoteButton.setEnabled(false);
+
+			}
+		});
+
+		final Button downvButton = (Button) v
+				.findViewById(R.id.downvotePostsButton);
+		downvButton.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				int count = object.getInt("Downvotes");
+				count = count + 1;
+				object.put("Downvotes", count);
+				object.saveInBackground();
+				notifyDataSetChanged();
+				downvButton.setEnabled(false);
+
+			}
+		});
+		upvotestext.setText(object.getInt("Upvotes") + " upvotes " + "and "
+				+ object.getInt("Downvotes") + " downvotes.");
+		
 		return v;
 	}
 }

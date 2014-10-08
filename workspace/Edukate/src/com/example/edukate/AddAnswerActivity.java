@@ -37,9 +37,14 @@ public class AddAnswerActivity extends Activity {
 
 				final ParseObject answerPosted = new ParseObject("answer");
 				answerPosted.put("answerPosted", answerEntered);
+				answerPosted.put("Upvotes", 0);
+				answerPosted.put("Downvotes", 0);
 				answerPosted.put("parent",
 						ParseObject.createWithoutData("question", objectId));
+				//ParseRelation<ParseObject> relationAnswer = answerPosted.getRelation("questionAnswered");
 				answerPosted.saveInBackground();
+				
+				
 
 				ParseQuery<ParseObject> query = ParseQuery.getQuery("question");
 				query.getInBackground(objectId, new GetCallback<ParseObject>() {
@@ -57,6 +62,8 @@ public class AddAnswerActivity extends Activity {
 
 					}
 				});
+				// Create relation for all answers
+				
 				finish();
 
 			}

@@ -56,5 +56,10 @@
     <string name="app_creator_email">navneet.nmk@gmail.com</string>
     <string name="app_creator_college">LNMIIT</string>
     <string name="add_post_text">Add Post</string>
+    <string name="title_activity_institute_profile">InstituteProfileActivity</string>
+    <string name="about_us">About Us</string>
+    <string name="about_institute">The LNM Institute of Information Technology (LNMIIT), is a deemed university located in Jaipur,             India, on an 100-acre (40 ha) campus.             The institute is a public-private partnership             between the Lakshmi Niwas Mittal and Usha Mittal foundation             and the Government of Rajasthan as an             autonomous non-profit organization.</string>
+    <string name="instiute_details">Instiute Details</string>
+    <string name="institute_details_text">The LNM Institute of Information Technology, is a deemed university located in Jaipur, India, on an 100-acre campus.\nAddress: Rupa Ki Nangal, Via-Jamdoli, Sumel, Jaipur, Rajasthan 302031\nPhone: 0141 518 9211\nFounded: 2003</string>
 
 </resources>

@@ -19,10 +19,31 @@
         <TextView
             android:id="@+id/poststext"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"       
+            android:layout_height="wrap_content"
             android:padding="8dp"
-            android:textSize="15sp"
-            android:text="@string/testingAnswerString" />
+            android:text="@string/testingAnswerString"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/upvotesTextAnswers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/poststext"
+            android:layout_below="@+id/poststext"
+            android:layout_marginTop="26dp"
+            android:padding="8dp"
+            android:text="@string/testingUpvotesString"
+            android:textSize="13sp"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/upvoteButtonAnswers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/upvotesTextAnswers"
+            android:layout_marginTop="22dp"
+            android:text="@string/upvoteLabel" />
 
         <Button
             android:id="@+id/downvoteButtonAnswers"
@@ -31,27 +52,8 @@
             android:layout_alignBaseline="@+id/upvoteButtonAnswers"
             android:layout_alignBottom="@+id/upvoteButtonAnswers"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="18dp"
             android:text="@string/downvoteLabel" />
-
-        <Button
-            android:id="@+id/upvoteButtonAnswers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/upvotesTextAnswers"
-            android:layout_below="@+id/upvotesTextAnswers"
-            android:layout_marginTop="52dp"
-            android:text="@string/upvoteLabel" />
-
-        <TextView
-            android:id="@+id/upvotesTextAnswers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/poststext"
-            android:layout_centerVertical="true"
-            android:padding="8dp"
-            android:text="@string/testingUpvotesString"
-            android:textSize="13sp"
-            android:textStyle="italic" />
 
     </RelativeLayout>
 
